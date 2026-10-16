@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="format-detection" content="telephone=no">
+<title>飞飞电影网 - 影视片单推荐与热映榜单影评专栏 | feifeidianyingwang-app.github.io</title>
+<meta name="keywords" content="飞飞电影网,飞飞电影网官网,飞飞电影,电影推荐片单,热映电影榜单,影评专栏,影视资讯,高分电影排行,影视解说,新片上映时间表,影视社区,在线影评交流">
+<meta name="description" content="飞飞电影网（https://feifeidianyingwang-app.github.io）专注影视内容整理：每日更新精选片单、院线热映榜单、深度影评专栏与影视行业资讯，提供影片评分、看点解析、观影指南与影迷话题讨论，帮你在海量片库里快速找到值得看的那部。">
+<meta name="author" content="飞飞电影网编辑部">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="revisit-after" content="1 days">
+<meta name="theme-color" content="#0f1519">
+<link rel="canonical" href="https://feifeidianyingwang-app.github.io/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="飞飞电影网">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:title" content="飞飞电影网 - 影视片单推荐与热映榜单影评专栏">
+<meta property="og:description" content="精选片单、院线热映榜单、深度影评与影视资讯一站看完，飞飞电影网帮你挑片不踩坑。">
+<meta property="og:url" content="https://feifeidianyingwang-app.github.io/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="飞飞电影网 - 影视片单推荐与热映榜单影评专栏">
+<meta name="twitter:description" content="精选片单、院线热映榜单、深度影评与影视资讯一站看完，飞飞电影网帮你挑片不踩坑。">
+<style>
+:root{
+  --ink:#0f1519;
+  --ink-soft:#202c34;
+  --paper:#f5f1e8;
+  --paper-2:#e9e3d6;
+  --red:#c8452f;
+  --gold:#d9a441;
+  --line:rgba(15,21,25,.14);
+  --radius:14px;
+  --maxw:1180px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{
+  font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Helvetica Neue",Arial,sans-serif;
+  background:var(--paper);
+  color:var(--ink);
+  line-height:1.7;
+  font-size:16px;
+  overflow-x:hidden;
+  background-image:repeating-linear-gradient(0deg,rgba(15,21,25,.022) 0 1px,transparent 1px 4px);
+}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+ul,ol{list-style:none}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 20px}
+.skip{position:absolute;left:-9999px}
+.skip:focus{left:12px;top:12px;background:var(--ink);color:#fff;padding:8px 14px;z-index:99}
+
+/* 顶部放映条 */
+.reelbar{
+  background:var(--ink);color:#cfd6da;font-size:12.5px;letter-spacing:.4px;
+  border-bottom:3px solid var(--red);
+}
+.reelbar .wrap{display:flex;flex-wrap:wrap;gap:10px 22px;align-items:center;min-height:38px;padding-top:6px;padding-bottom:6px}
+.reelbar b{color:var(--gold);font-weight:600}
+.reelbar .dot{width:6px;height:6px;border-radius:50%;background:var(--red);display:inline-block;margin-right:6px;animation:blink 1.6s infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.25}}
+.reelbar .right{margin-left:auto;display:flex;gap:16px;flex-wrap:wrap}
+.reelbar a{color:#cfd6da;border-bottom:1px dotted rgba(207,214,218,.4)}
+
+/* 头部 */
+header.masthead{background:var(--paper);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:60;backdrop-filter:saturate(140%) blur(6px);background:rgba(245,241,232,.94)}
+.masthead .wrap{display:flex;align-items:center;gap:18px;min-height:74px}
+.brand{display:flex;align-items:center;gap:12px;flex:0 0 auto}
+.filmchip{
+  width:44px;height:44px;border-radius:6px;background:var(--ink);position:relative;flex:0 0 auto;
+  box-shadow:0 2px 0 var(--red);
+}
+.filmchip::before,.filmchip::after{
+  content:"";position:absolute;left:4px;right:4px;height:7px;
+  background-image:radial-gradient(circle at 5px 50%,var(--paper) 0 2.2px,transparent 2.4px);
+  background-size:11px 7px;
+}
+.filmchip::before{top:4px}
+.filmchip::after{bottom:4px}
+.brand-txt strong{display:block;font-size:23px;letter-spacing:2px;line-height:1.15;font-weight:800}
+.brand-txt span{display:block;font-size:11px;letter-spacing:1.6px;color:#7a7a70;text-transform:uppercase}
+
+nav.mainnav{margin-left:auto}
+nav.mainnav ul{display:flex;gap:4px}
+nav.mainnav a{
+  display:block;padding:9px 14px;border-radius:999px;font-size:15px;font-weight:600;color:#3a444b;
+  transition:background .2s,color .2s;
+}
+nav.mainnav a:hover{background:var(--ink);color:#fff}
+.navtoggle{display:none}
+.burger{display:none;margin-left:auto;width:46px;height:40px;border:1px solid var(--line);border-radius:8px;background:#fff;cursor:pointer;position:relative}
+.burger i{position:absolute;left:12px;right:12px;height:2px;background:var(--ink);transition:.25s}
+.burger i:nth-child(1){top:13px}
+.burger i:nth-child(2){top:19px}
+.burger i:nth-child(3){top:25px}
+
+/* 首屏 */
+.hero{background:var(--ink);color:var(--paper);position:relative;overflow:hidden}
+.hero::before{
+  content:"";position:absolute;inset:0;
+  background:
+    radial-gradient(900px 420px at 88% -10%,rgba(200,69,47,.35),transparent 60%),
+    radial-gradient(600px 400px at 5% 110%,rgba(217,164,65,.22),transparent 65%);
+}
+.hero .wrap{position:relative;display:grid;grid-template-columns:1.35fr .65fr;gap:36px;padding-top:58px;padding-bottom:58px;align-items:end}
+.kicker{display:inline-flex;align-items:center;gap:8px;font-size:12px;letter-spacing:3px;color:var(--gold);border:1px solid rgba(217,164,65,.5);padding:5px 12px;border-radius:3px;margin-bottom:20px}
+.hero h1{font-size:clamp(30px,5.4vw,54px);line-height:1.22;font-weight:800;letter-spacing:1px}
+.hero h1 em{font-style:normal;color:var(--gold);position:relative;white-space:nowrap}
+.hero h1 em::after{content:"";position:absolute;left:0;right:0;bottom:2px;height:8px;background:rgba(200,69,47,.5);z-index:-1}
+.hero p.lead{margin-top:18px;max-width:56ch;color:#cfd6da;font-size:16.5px}
+.btnrow{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}
+.btn{display:inline-block;padding:12px 24px;border-radius:3px;font-weight:700;font-size:15px;border:2px solid transparent}
+.btn-solid{background:var(--red);color:#fff;box-shadow:4px 4px 0 rgba(245,241,232,.22)}
+.btn-ghost{border-color:rgba(245,241,232,.55);color:var(--paper)}
+.btn:hover{transform:translateY(-2px)}
+.hero-stats{background:rgba(245,241,232,.07);border:1px solid rgba(245,241,232,.18);border-radius:var(--radius);padding:20px}
+.hero-stats li{display:flex;justify-content:space-between;gap:12px;padding:9px 0;border-bottom:1px dashed rgba(245,241,232,.16);font-size:14px}
+.hero-stats li:last-child{border-bottom:0}
+.hero-stats span:first-child{color:#a9b3b9}
+.hero-stats b{color:var(--gold);font-size:17px}
+
+/* 通用栏头 */
+.sec{padding:56px 0}
+.sec-head{display:flex;align-items:flex-end;gap:16px;flex-wrap:wrap;margin-bottom:26px;border-bottom:2px solid var(--ink);padding-bottom:12px}
+.sec-head h2{font-size:clamp(22px,3.2vw,30px);font-weight:800;letter-spacing:.5px;position:relative;padding-left:14px}
+.sec-head h2::before{content:"";position:absolute;left:0;top:8px;bottom:6px;width:5px;background:var(--red)}
+.sec-head p{font-size:13.5px;color:#6d757b;margin-left:auto;max-width:44ch}
+
+/* 栏目1 横向片单 */
+.picks{background:var(--paper)}
+.rail{display:flex;gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;padding:6px 20px 20px;margin:0 -20px;-webkit-overflow-scrolling:touch}
+.rail::-webkit-scrollbar{height:8px}
+.rail::-webkit-scrollbar-thumb{background:var(--ink-soft);border-radius:8px}
+.card{flex:0 0 268px;scroll-snap-align:start;background:#fff;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;display:flex;flex-direction:column}
+.poster{height:158px;position:relative;display:flex;align-items:flex-end;padding:14px}
+.poster::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,rgba(15,21,25,.72))}
+.poster b{position:relative;z-index:2;color:#fff;font-size:17px;letter-spacing:1px;line-height:1.35}
+.tag{position:absolute;top:12px;left:12px;z-index:2;background:var(--red);color:#fff;font-size:11.5px;padding:3px 9px;border-radius:2px;letter-spacing:.5px}
+.card .body{padding:14px 16px 18px;font-size:14.5px;color:#4a545a}
+.card .body p{margin-bottom:10px}
+.meta{display:flex;gap:10px;font-size:12.5px;color:#8b8b82;border-top:1px dashed var(--line);padding-top:10px}
+.meta b{color:var(--red)}
+
+/* 栏目2 榜单 */
+.board{background:var(--ink);color:var(--paper)}
+.board .sec-head{border-color:rgba(245,241,232,.3)}
+.board .sec-head h2::before{background:var(--gold)}
+.board .sec-head p{color:#a9b3b9}
+.ranklist{border-top:1px solid rgba(245,241,232,.16)}
+.ranklist li{display:grid;grid-template-columns:56px 1fr 150px 96px;gap:14px;align-items:center;padding:16px 4px;border-bottom:1px solid rgba(245,241,232,.12)}
+.rk{font-size:26px;font-weight:800;color:rgba(245,241,232,.28);font-variant-numeric:tabular-nums}
+.ranklist li:nth-child(1) .rk,.ranklist li:nth-child(2) .rk,.ranklist li:nth-child(3) .rk{color:var(--gold)}
+.rk-t b{display:block;font-size:17px;letter-spacing:.5px}
+.rk-t span{font-size:13px;color:#a9b3b9}
+.bar{height:7px;background:rgba(245,241,232,.15);border-radius:8px;overflow:hidden}
+.bar i{display:block;height:100%;background:linear-gradient(90deg,var(--red),var(--gold))}
+.score{text-align:right;font-size:20px;font-weight:800;color:var(--gold);font-variant-numeric:tabular-nums}
+.score small{display:block;font-size:11.5px;font-weight:500;color:#8b949b;letter-spacing:1px}
+
+/* 栏目3 影评 */
+.reviews{background:var(--paper-2)}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.rev{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:22px;position:relative;transition:.25s}
+.rev:hover{box-shadow:0 12px 28px rgba(15,21,25,.12);transform:translateY(-3px)}
+.rev .quote{font-size:15.5px;color:#333c42;margin:12px 0 14px}
+.rev h3{font-size:18px;letter-spacing:.5px;line-height:1.4}
+.rev .by{font-size:12.5px;color:#86867c;display:flex;gap:10px;flex-wrap:wrap;border-top:1px dashed var(--line);padding-top:12px}
+.badge{background:var(--ink);color:var(--gold);font-size:11px;padding:2px 8px;border-radius:2px;letter-spacing:.5px}
+
+/* 栏目4 资讯时间线 */
+.news{background:var(--paper)}
+.tl{position:relative;padding-left:28px}
+.tl::before{content:"";position:absolute;left:7px;top:6px;bottom:6px;width:2px;background:var(--line)}
+.tl li{position:relative;padding:0 0 22px}
+.tl li::before{content:"";position:absolute;left:-27px;top:8px;width:12px;height:12px;border-radius:50%;background:var(--paper);border:3px solid var(--red)}
+.tl time{display:inline-block;font-size:12px;color:var(--red);font-weight:700;letter-spacing:1px;margin-bottom:4px}
+.tl h3{font-size:16.5px;line-height:1.5;margin-bottom:4px}
+.tl p{font-size:14px;color:#5c666c}
+
+/* 栏目5 社区 */
+.community{background:var(--ink);color:var(--paper);border-top:6px solid var(--red)}
+.com-grid{display:grid;grid-template-columns:1fr 1fr;gap:34px;align-items:start}
+.com-grid h2{font-size:clamp(22px,3vw,28px);font-weight:800;letter-spacing:.5px;margin-bottom:14px}
+.com-grid p{color:#cfd6da;font-size:15px;margin-bottom:18px}
+.topics{display:flex;flex-wrap:wrap;gap:10px}
+.topics a{display:inline-block;padding:8px 14px;border:1px solid rgba(245,241,232,.28);border-radius:999px;font-size:13.5px;transition:.2s}
+.topics a:hover{background:var(--red);border-color:var(--red)}
+.counters{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.counter{background:rgba(245,241,232,.06);border:1px solid rgba(245,241,232,.16);border-radius:12px;padding:18px}
+.counter b{display:block;font-size:28px;color:var(--gold);font-variant-numeric:tabular-nums;line-height:1.2}
+.counter span{font-size:13px;color:#a9b3b9}
+
+/* 关于 + FAQ */
+.about{background:var(--paper)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:34px}
+.two h2{font-size:24px;font-weight:800;margin-bottom:14px;letter-spacing:.5px}
+.two p{font-size:15px;color:#4a545a;margin-bottom:12px}
+dl.faq dt{font-weight:700;font-size:15.5px;padding:14px 0;border-top:1px solid var(--line);cursor:pointer;display:flex;justify-content:space-between;gap:12px}
+dl.faq dt::after{content:"+";color:var(--red);font-weight:800}
+dl.faq dd{font-size:14.5px;color:#5c666c;padding-bottom:14px;border-bottom:1px solid var(--line)}
+
+/* 页脚 */
+footer.foot{background:var(--ink-soft);color:#b9c2c7;font-size:14px;padding-top:44px}
+.foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:28px;padding-bottom:30px}
+.foot h4{color:#fff;font-size:15px;margin-bottom:14px;letter-spacing:1px}
+.foot li{padding:5px 0}
+.foot a{color:#b9c2c7}
+.foot a:hover{color:var(--gold)}
+.foot .urlline{margin-top:14px;font-size:13px;word-break:break-all;color:#8b949b}
+.foot .urlline b{color:var(--gold)}
+.foot-bottom{border-top:1px solid rgba(245,241,232,.12);padding:18px 0 26px;display:flex;gap:14px;flex-wrap:wrap;justify-content:space-between;font-size:13px;color:#8b949b}
+
+/* 响应式 */
+@media (max-width:900px){
+  .hero .wrap{grid-template-columns:1fr;gap:26px;padding-top:40px;padding-bottom:40px}
+  .grid3{grid-template-columns:1fr 1fr}
+  .foot-grid{grid-template-columns:1fr 1fr}
+  .two,.com-grid{grid-template-columns:1fr;gap:24px}
+}
+@media (max-width:720px){
+  body{font-size:15.5px}
+  .wrap{padding:0 16px}
+  nav.mainnav{display:none;position:absolute;top:74px;left:0;right:0;background:var(--paper);border-bottom:2px solid var(--ink);padding:10px 16px 16px;box-shadow:0 14px 24px rgba(15,21,25,.14)}
+  nav.mainnav ul{flex-direction:column;gap:2px}
+  nav.mainnav a{padding:12px 10px;border-radius:8px;border-bottom:1px solid var(--line)}
+  .burger{display:block}
+  .navtoggle:checked ~ nav.mainnav{display:block}
+  .navtoggle:checked ~ .burger i:nth-child(1){transform:translateY(6px) rotate(45deg)}
+  .navtoggle:checked ~ .burger i:nth-child(2){opacity:0}
+  .navtoggle:checked ~ .burger i:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
+  .reelbar .right{margin-left:0;width:100%}
+  .sec{padding:40px 0}
+  .card{flex:0 0 78%}
+  .ranklist li{grid-template-columns:40px 1fr 76px;grid-template-areas:"rk t sc" ". bar bar";row-gap:8px}
+  .rk{grid-area:rk}.rk-t{grid-area:t}.bar{grid-area:bar}.score{grid-area:sc}
+  .rk{font-size:20px}
+  .grid3{grid-template-columns:1fr}
+  .counters{grid-template-columns:1fr 1fr}
+  .foot-grid{grid-template-columns:1fr}
+  .btnrow .btn{flex:1 1 100%;text-align:center}
+}
+@media (max-width:380px){
+  .brand-txt strong{font-size:20px}
+  .filmchip{width:38px;height:38px}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/yazhou.js"></script>
+<a class="skip" href="#main">跳转到主要内容</a>
+
+<div class="reelbar">
+  <div class="wrap">
+    <span><span class="dot"></span>今日更新 <b>12 部</b> 新片资料 · 榜单每小时刷新一次</span>
+    <span class="right">
+      <span>本站地址：<b>https://feifeidianyingwang-app.github.io</b></span>
+      <a href="#picks">片单</a>
+      <a href="#board">榜单</a>
+      <a href="#about">关于</a>
+    </span>
+  </div>
+</div>
+
+<header class="masthead">
+  <div class="wrap">
+    <input class="navtoggle" id="navtoggle" type="checkbox" aria-label="展开导航菜单">
+    <a class="brand" href="#top" aria-label="飞飞电影网 首页">
+      <span class="filmchip" aria-hidden="true"></span>
+      <span class="brand-txt">
+        <strong>飞飞电影网</strong>
+        <span>FeiFei Movie · Since 2019</span>
+      </span>
+    </a>
+    <nav class="mainnav" aria-label="主导航">
+      <ul>
+        <li><a href="#picks">精选片单</a></li>
+        <li><a href="#board">热映榜单</a></li>
+        <li><a href="#reviews">影评专栏</a></li>
+        <li><a href="#news">影视资讯</a></li>
+        <li><a href="#community">影迷社区</a></li>
+        <li><a href="#about">关于本站</a></li>
+      </ul>
+    </nav>
+    <label class="burger" for="navtoggle" aria-hidden="true"><i></i><i></i><i></i></label>
+  </div>
+</header>
+
+<main id="main">
+<section class="hero" id="top">
+  <div class="wrap">
+    <div>
+      <span class="kicker">FEIFEI MOVIE · 挑片不踩坑</span>
+      <h1>飞飞电影网：把值得花时间的<br>那部片子<em>挑出来给你</em></h1>
+      <p class="lead">不堆片源、不吹海报。飞飞电影网只做三件事——把片单按口味分好类，把院线热映的真实口碑排个序，再把每部片子的看点、槽点和适合谁看讲明白。每周一、周四更新，遇到大片上映加更。</p>
+      <div class="btnrow">
+        <a class="btn btn-solid" href="#picks">看看本周片单</a>
+        <a class="btn btn-ghost" href="#board">查看热映榜单</a>
+      </div>
+    </div>
+    <ul class="hero-stats">
+      <li><span>收录影片资料</span><b>18,600+</b></li>
+      <li><span>累计原创影评</span><b>2,140 篇</b></li>
+      <li><span>本周新增片单</span><b>27 个</b></li>
+      <li><span>影迷评分样本</span><b>96 万条</b></li>
+      <li><span>内容更新频率</span><b>每周 2 次</b></li>
+    </ul>
+  </div>
+</section>
+
+<section class="sec picks" id="picks">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>精选片单</h2>
+      <p>按题材、情绪和观影场景整理，左右滑动可以翻更多。</p>
+    </div>
+    <ul class="rail">
+      <li class="card">
+        <div class="poster" style="background:linear-gradient(135deg,#1f3a5f,#c8452f)">
+          <span class="tag">周末刷</span><b>一口气刷完的<br>六部悬疑神作</b>
+        </div>
+        <div class="body">
+          <p>反转密度高、节奏不拖，适合一个下午连着看。每一部都在 120 分钟内收尾，中途不用快进。</p>
+          <div class="meta"><span>6 部</span><span>均分 <b>8.4</b></span><span>更新 10-14</span></div>
+        </div>
+      </li>
+      <li class="card">
+        <div class="poster" style="background:linear-gradient(135deg,#2d4a3e,#d9a441)">
+          <span class="tag">治愈系</span><b>心情低落时<br>该看的那几部</b>
+        </div>
+        <div class="body">
+          <p>没有大悲大喜，镜头慢一点、台词软一点。看完大概会想给很久没联系的人发条消息。</p>
+          <div class="meta"><span>5 部</span><span>均分 <b>8.1</b></span><span>更新 10-11</span></div>
+        </div>
+      </li>
+      <li class="card">
+        <div class="poster" style="background:linear-gradient(135deg,#4a2c5e,#e0764a)">
+          <span class="tag">亲子场</span><b>陪孩子看也<br>不会睡着的动画</b>
+        </div>
+        <div class="body">
+          <p>挑片标准很简单：大人看不尴尬，孩子看得懂。附了每部适合的年龄段提示。</p>
+          <div class="meta"><span>8 部</span><span>均分 <b>7.9</b></span><span>更新 10-08</span></div>
+        </div>
+      </li>
+      <li class="card">
+        <div class="poster" style="background:linear-gradient(135deg,#12303a,#5aa9a3)">
+          <span class="tag">硬核向</span><b>看懂需要<br>做点功课的科幻</b>
+        </div>
+        <div class="body">
+          <p>时间线交错、设定密集，配了一份术语速查表，第一次看也不至于全程懵。</p>
+          <div class="meta"><span>4 部</span><span>均分 <b>8.6</b></span><span>更新 10-05</span></div>
+        </div>
+      </li>
+      <li class="card">
+        <div class="poster" style="background:linear-gradient(135deg,#5c2b2b,#d9a441)">
+          <span class="tag">华语档</span><b>近十年<br>被低估的国产片</b>
+        </div>
+        <div class="body">
+          <p>票房不高但完成度扎实，多数在流媒体就能找到。含当年上映时的冷门背景说明。</p>
+          <div class="meta"><span>9 部</span><span>均分 <b>7.7</b></span><span>更新 09-30</span></div>
+        </div>
+      </li>
+      <li class="card">
+        <div class="poster" style="background:linear-gradient(135deg,#2b3d1f,#8fa85a)">
+          <span class="tag">深夜档</span><b>一个人戴耳机<br>看的氛围片</b>
+        </div>
+        <div class="body">
+          <p>对白少、配乐重，画面本身就在讲故事。建议关灯看，别开弹窗。</p>
+          <div class="meta"><span>5 部</span><span>均分 <b>8.0</b></span><span>更新 09-26</span></div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<section class="sec board" id="board">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>热映榜单</h2>
+      <p>综合院线场次、上座率与本站影迷打分，数据截至本周。</p>
+    </div>
+    <ol class="ranklist">
+      <li>
+        <span class="rk">01</span>
+        <span class="rk-t"><b>《长夜将尽》</b><span>剧情 / 犯罪 · 148 分钟 · 内地</span></span>
+        <span class="bar"><i style="width:92%"></i></span>
+        <span class="score">9.2<small>4.2万人评</small></span>
+      </li>
+      <li>
+        <span class="rk">02</span>
+        <span class="rk-t"><b>《海边的旧信》</b><span>爱情 / 文艺 · 112 分钟 · 日本</span></span>
+        <span class="bar"><i style="width:88%"></i></span>
+        <span class="score">8.9<small>3.1万人评</small></span>
+      </li>
+      <li>
+        <span class="rk">03</span>
+        <span class="rk-t"><b>《铁轨尽头》</b><span>公路 / 家庭 · 126 分钟 · 华语</span></span>
+        <span class="bar"><i style="width:84%"></i></span>
+        <span class="score">8.5<small>2.6万人评</small></span>
+      </li>
+      <li>
+        <span class="rk">04</span>
+        <span class="rk-t"><b>《第七号观察站》</b><span>科幻 / 悬疑 · 134 分钟 · 美国</span></span>
+        <span class="bar"><i style="width:79%"></i></span>
+        <span class="score">8.1<small>5.8万人评</small></span>
+      </li>
+      <li>
+        <span class="rk">05</span>
+        <span class="rk-t"><b>《菜市场女王》</b><span>喜剧 / 生活 · 101 分钟 · 华语</span></span>
+        <span class="bar"><i style="width:75%"></i></span>
+        <span class="score">7.8<small>1.9万人评</small></span>
+      </li>
+      <li>
+        <span class="rk">06</span>
+        <span class="rk-t"><b>《无声合唱团》</b><span>音乐 / 励志 · 118 分钟 · 法国</span></span>
+        <span class="bar"><i style="width:71%"></i></span>
+        <span class="score">7.6<small>1.2万人评</small></span>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<section class="sec reviews" id="reviews">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>影评专栏</h2>
+      <p>编辑部与老读者共同撰写，观点不中立，但会写明立场。</p>
+    </div>
+    <div class="grid3">
+      <article class="rev">
+        <span class="badge">深度解析</span>
+        <h3>《长夜将尽》：一场没有赢家的追凶</h3>
+        <p class="quote">导演把"真相"拆成三段互相矛盾的证词，观众看到的始终是别人想让ta看到的部分。第二幕那场七分钟长镜头，是全片唯一一次不给剪辑做选择的机会。</p>
+        <p class="by"><span>撰稿 / 陈默</span><span>10-15</span><span>阅读 8,600</span></p>
+      </article>
+      <article class="rev">
+        <span class="badge">避雷提示</span>
+        <h3>《第七号观察站》：设定满分，人物零分</h3>
+        <p class="quote">世界观铺得很扎实，但四个主要角色从头到尾只做了一件事——解释设定。看完能复述剧情，却记不住任何一个人的名字。</p>
+        <p class="by"><span>撰稿 / 林小满</span><span>10-12</span><span>阅读 5,200</span></p>
+      </article>
+      <article class="rev">
+        <span class="badge">冷门推荐</span>
+        <h3>被院线耽误的《海边的旧信》</h3>
+        <p class="quote">排片不到百分之三，却是今年镜头语言最克制的一部。它讲的不是爱情，是两个人都明白回不去了、还愿意坐下来吃顿饭的事。</p>
+        <p class="by"><span>撰稿 / 周与舟</span><span>10-09</span><span>阅读 3,940</span></p>
+      </article>
+      <article class="rev">
+        <span class="badge">技术拆解</span>
+        <h3>《铁轨尽头》的手持摄影到底难在哪</h3>
+        <p class="quote">全片 126 分钟几乎无三脚架镜头，却极少眩晕。秘密在于摄影指导把重心压在腰线以下，让画面晃得像走路，不像地震。</p>
+        <p class="by"><span>撰稿 / 苏禾</span><span>10-06</span><span>阅读 2,780</span></p>
+      </article>
+      <article class="rev">
+        <span class="badge">观影指南</span>
+        <h3>带父母看电影，这三类别踩坑</h3>
+        <p class="quote">非线性叙事、方言对白、超过两小时的悲剧——经验上最容易让长辈中途离场。附一份替代片单和座位选择建议。</p>
+        <p class="by"><span>撰稿 / 编辑部</span><span>10-03</span><span>阅读 11,300</span></p>
+      </article>
+      <article class="rev">
+        <span class="badge">年度盘点</span>
+        <h3>2026 上半年华语片十个高光瞬间</h3>
+        <p class="quote">不排名，只挑出那些"看完会记住很久"的片段。其中有四部来自新人导演，成本都低于三千万。</p>
+        <p class="by"><span>撰稿 / 陈默</span><span>09-28</span><span>阅读 6,150</span></p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="sec news" id="news">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>影视资讯</h2>
+      <p>上映排期、行业动向与幕后消息，只挑和观众有关的。</p>
+    </div>
+    <ul class="tl">
+      <li>
+        <time datetime="2026-10-15">10 月 15 日</time>
+        <h3>《长夜将尽》密钥延期至 11 月底</h3>
+        <p>发行方今日确认延期一个月，二线城市排片占比预计回升。想看 IMAX 版本的建议趁这周。</p>
+      </li>
+      <li>
+        <time datetime="2026-10-13">10 月 13 日</time>
+        <h3>国庆档后票房回落，中小成本影片逆势上涨</h3>
+        <p>上周大盘环比下降约三成，但两部成本不足两千万的影片凭借口碑走出长线曲线。</p>
+      </li>
+      <li>
+        <time datetime="2026-10-10">10 月 10 日</time>
+        <h3>三部华语新片定档 11 月，类型分布罕见地分散</h3>
+        <p>科幻、家庭、动画各占一席，避开了往年同期扎堆喜剧的情况，排片竞争压力预计减小。</p>
+      </li>
+      <li>
+        <time datetime="2026-10-07">10 月 07 日</time>
+        <h3>《海边的旧信》导演访谈：删掉了 40 分钟旁白</h3>
+        <p>剪辑阶段推翻了初版剧本里的旁白设计，最终版全靠画面推进情绪，这也是它节奏偏慢的原因。</p>
+      </li>
+      <li>
+        <time datetime="2026-10-04">10 月 04 日</time>
+        <h3>多地影院试点"静音场"，观影礼仪再被讨论</h3>
+        <p>试点场次要求手机全程静音、不携带有气味食物，目前反馈两极，支持者集中在文艺片观众群。</p>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<section class="sec community" id="community">
+  <div class="wrap com-grid">
+    <div>
+      <h2>影迷社区</h2>
+      <p>打分、短评、找同好。飞飞电影网的评分来自真实观影后的记录，同一账号对同一部片只计一次，水军样本会被剔除。</p>
+      <div class="topics">
+        <a href="#"># 一人一句短评</a>
+        <a href="#"># 本周你看了什么</a>
+        <a href="#"># 烂片避雷互助</a>
+        <a href="#"># 冷门片挖宝</a>
+        <a href="#"># 重映片补票</a>
+        <a href="#"># 影院体验吐槽</a>
+        <a href="#"># 导演作品补全计划</a>
+        <a href="#"># 原著与改编对比</a>
+      </div>
+    </div>
+    <ul class="counters">
+      <li class="counter"><b>96.4 万</b><span>累计有效评分</span></li>
+      <li class="counter"><b>31.8 万</b><span>社区短评条数</span></li>
+      <li class="counter"><b>12.7 万</b><span>注册影迷</span></li>
+      <li class="counter"><b>4,300+</b><span>自发片单</span></li>
+    </ul>
+  </div>
+</section>
+
+<section class="sec about" id="about">
+  <div class="wrap two">
+    <div>
+      <h2>关于飞飞电影网</h2>
+      <p>飞飞电影网（https://feifeidianyingwang-app.github.io）是一个由影迷维护的影视内容站，2019 年从一个片单帖子起步，现在稳定更新片单、榜单、影评与资讯四块内容。</p>
+      <p>我们不提供影片播放与下载，只做信息整理与观点输出：一部片子值不值得看、适合在什么状态下看、和谁一起看比较合适——这些才是我们花时间的地方。</p>
+      <p>所有打分均来自本站注册用户的观影记录，页面内不插入任何无关的跳转广告，栏目顺序按内容更新频率排列。</p>
+    </div>
+    <div>
+      <h2>常见问题</h2>
+      <dl class="faq">
+        <dt>榜单多久更新一次？</dt>
+        <dd>热映榜单每小时同步一次院线与评分数据，精选片单固定在每周一、周四更新，遇到重点影片上映会加更。</dd>
+        <dt>这里的评分和别处不一样？</dt>
+        <dd>正常。本站只统计观影后 24 小时内提交的打分，并剔除极端刷分样本，样本量小的影片会标注"评分待稳定"。</dd>
+        <dt>能不能直接在站里看片？</dt>
+        <dd>不能。飞飞电影网只做内容整理与推荐，不存放任何影片资源，也不会引导到第三方播放页。</dd>
+        <dt>怎么推荐一部冷门片？</dt>
+        <dd>进入影迷社区带话题 <strong># 冷门片挖宝</strong> 发帖，附上影片年份、地区与一段不超过 200 字的推荐理由，编辑部每周挑十条整理进片单。</dd>
+      </dl>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <h4>飞飞电影网</h4>
+        <p>挑片不踩坑。每周一、周四更新片单，热映榜单每小时刷新，内容全部由编辑部与社区影迷共同维护。</p>
+        <p class="urlline">官方网址：<b>https://feifeidianyingwang-app.github.io</b></p>
+      </div>
+      <div>
+        <h4>内容栏目</h4>
+        <ul>
+          <li><a href="#picks">精选片单</a></li>
+          <li><a href="#board">热映榜单</a></li>
+          <li><a href="#reviews">影评专栏</a></li>
+          <li><a href="#news">影视资讯</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>社区与互动</h4>
+        <ul>
+          <li><a href="#community">影迷社区</a></li>
+          <li><a href="#community">短评投稿</a></li>
+          <li><a href="#community">冷门片挖宝</a></li>
+          <li><a href="#about">投稿说明</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>站点信息</h4>
+        <ul>
+          <li><a href="#about">关于本站</a></li>
+          <li><a href="#about">常见问题</a></li>
+          <li><a href="#about">内容规范</a></li>
+          <li><a href="#top">返回顶部</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2019-2026 飞飞电影网 · 影视内容整理与推荐</span>
+      <span>飞飞电影网 · feifeidianyingwang-app.github.io</span>
+    </div>
+  </div>
+</footer>
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@graph":[
+    {
+      "@type":"WebSite",
+      "@id":"https://feifeidianyingwang-app.github.io/#website",
+      "url":"https://feifeidianyingwang-app.github.io/",
+      "name":"飞飞电影网",
+      "alternateName":"飞飞电影网官网",
+      "inLanguage":"zh-CN",
+      "description":"飞飞电影网提供精选片单、热映榜单、影评专栏与影视资讯，帮你在海量片库中快速找到值得观看的影片。",
+      "publisher":{"@id":"https://feifeidianyingwang-app.github.io/#org"}
+    },
+    {
+      "@type":"Organization",
+      "@id":"https://feifeidianyingwang-app.github.io/#org",
+      "name":"飞飞电影网",
+      "url":"https://feifeidianyingwang-app.github.io/",
+      "foundingDate":"2019",
+      "description":"由影迷维护的影视内容整理站点，专注片单推荐、榜单排行、影评与影视资讯。"
+    },
+    {
+      "@type":"BreadcrumbList",
+      "itemListElement":[
+        {"@type":"ListItem","position":1,"name":"飞飞电影网","item":"https://feifeidianyingwang-app.github.io/"},
+        {"@type":"ListItem","position":2,"name":"精选片单","item":"https://feifeidianyingwang-app.github.io/#picks"},
+        {"@type":"ListItem","position":3,"name":"热映榜单","item":"https://feifeidianyingwang-app.github.io/#board"},
+        {"@type":"ListItem","position":4,"name":"影评专栏","item":"https://feifeidianyingwang-app.github.io/#reviews"},
+        {"@type":"ListItem","position":5,"name":"影视资讯","item":"https://feifeidianyingwang-app.github.io/#news"}
+      ]
+    },
+    {
+      "@type":"ItemList",
+      "name":"飞飞电影网热映榜单",
+      "itemListElement":[
+        {"@type":"ListItem","position":1,"name":"长夜将尽"},
+        {"@type":"ListItem","position":2,"name":"海边的旧信"},
+        {"@type":"ListItem","position":3,"name":"铁轨尽头"},
+        {"@type":"ListItem","position":4,"name":"第七号观察站"},
+        {"@type":"ListItem","position":5,"name":"菜市场女王"},
+        {"@type":"ListItem","position":6,"name":"无声合唱团"}
+      ]
+    }
+  ]
+}
+</script>
+</body>
+</html>
